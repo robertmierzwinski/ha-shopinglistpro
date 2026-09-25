@@ -21,6 +21,10 @@ Your list lives in HA's local storage, gets you a full web app, a dashboard card
 2. Search **ShopingListPro** and **Download**.
 3. Restart Home Assistant (when prompted).
 
+### Update an existing installation
+
+Download the latest version in HACS and restart Home Assistant, then refresh the browser page. For a manual installation, replace only `config/custom_components/moje_zakupy/` with the directory from this repository and restart Home Assistant. Keep the existing integration entry and shopping-list data.
+
 ### Manual install
 
 Copy the `custom_components/moje_zakupy/` folder from this repo to `config/custom_components/` and restart HA.
@@ -59,6 +63,10 @@ Dane żyją w lokalnym przechowywaniu HA; instalacja daje Ci pełną aplikację,
 4. Zrestartuj Home Assistant (HACS o to poprosi).
 
 > 💡 Gdy pojawi się nowsza wersja, pobierz aktualizację w HACS i zrestartuj Home Assistant.
+
+### Aktualizacja istniejącej instalacji
+
+W HACS pobierz najnowszą wersję, uruchom ponownie Home Assistant i odśwież stronę przeglądarki. Przy instalacji ręcznej podmień tylko katalog `config/custom_components/moje_zakupy/` na aktualny katalog z repozytorium, a następnie uruchom ponownie Home Assistant. Nie usuwaj istniejącego wpisu integracji ani danych listy.
 
 ### Instalacja manualna (bez HACS)
 
@@ -145,6 +153,7 @@ action:
 
 ## Changelog / Licencja
 
+- **1.0.7** — poprawiono błąd `this._config.shops is undefined` przy pierwszym otwarciu edytora karty; odświeżono wersję zasobu Lovelace.
 - **1.0.6** — poprawione tworzenie sensorów i aktualizacja zasobu karty; błędy rejestracji karty nie blokują uruchomienia listy.
 - **1.0.5** — obsługa wielu list o tej samej nazwie: panel i karta przekazują identyfikator wpisu przy każdej operacji; panel umożliwia wybór listy.
 - **1.0.4** — automatyczna rejestracja zasobu karty w Lovelace oraz poprawiony edytor karty.

@@ -1612,7 +1612,7 @@ class MojeZakupyCard extends HTMLElement {
 class MojeZakupyCardOptions extends HTMLElement {
   constructor() {
     super();
-    this._config = {};
+    this._config = null;
     this._hass = null;
   }
 

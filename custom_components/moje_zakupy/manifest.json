@@ -1,7 +1,7 @@
 {
   "domain": "moje_zakupy",
   "name": "ShopingListPro",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "documentation": "https://github.com/robertmierzwinski/ha-shopinglistpro",
   "issue_tracker": "https://github.com/robertmierzwinski/ha-shopinglistpro/issues",
   "codeowners": [

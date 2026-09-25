@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# macOS / system
+.DS_Store
+
+# editors / IDE
+.vscode/
+.idea/
+
+# Home Assistant dev
+homeassistant/
+*.log

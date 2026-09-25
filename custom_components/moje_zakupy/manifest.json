@@ -1,0 +1,18 @@
+{
+  "domain": "moje_zakupy",
+  "name": "ShopingListPro",
+  "version": "1.0.6",
+  "documentation": "https://github.com/robertmierzwinski/ha-shopinglistpro",
+  "issue_tracker": "https://github.com/robertmierzwinski/ha-shopinglistpro/issues",
+  "codeowners": [
+    "@robertmierzwinski"
+  ],
+  "config_flow": true,
+  "iot_class": "calculated",
+  "dependencies": [
+    "frontend",
+    "http",
+    "lovelace"
+  ],
+  "requirements": []
+}

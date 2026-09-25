@@ -1,0 +1,32 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "ShopingListPro",
+        "description": "Shopping list stored locally in Home Assistant. No external backend required.",
+        "data": {
+          "name": "Name",
+          "initial": "Existing list (optional)"
+        },
+        "data_description": {
+          "initial": "Paste the contents of your old data.json to import the list during setup. Leave empty to start with an empty list."
+        }
+      }
+    },
+    "error": {
+      "invalid_json": "Could not parse the pasted data — please check that it is a valid data.json file."
+    },
+    "abort": {
+      "unique": "This shopping list is already configured."
+    },
+    "create_entry": "{name}"
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "ShopingListPro options"
+      }
+    },
+    "create_entry": "Options saved"
+  }
+}

@@ -1,0 +1,224 @@
+add_shop:
+  fields:
+    name:
+      required: true
+      example: "Lidl"
+      selector:
+        text:
+          multiline: false
+    entry:
+      required: false
+      selector:
+        text:
+
+add_category:
+  fields:
+    shop:
+      required: true
+      example: "DINO"
+      selector:
+        text:
+    name:
+      required: true
+      example: "Napoje"
+      selector:
+        text:
+    entry:
+      required: false
+      selector:
+        text:
+
+add_product:
+  fields:
+    shop:
+      required: true
+      example: "DINO"
+      selector:
+        text:
+    category:
+      required: true
+      example: "Napoje"
+      selector:
+        text:
+    name:
+      required: true
+      example: "Woda 1,5L"
+      selector:
+        text:
+    entry:
+      required: false
+      selector:
+        text:
+
+delete_shop:
+  fields:
+    shop:
+      required: true
+      example: "Lidl"
+      selector:
+        text:
+    confirm:
+      required: false
+      default: false
+      selector:
+        boolean:
+    entry:
+      required: false
+      selector:
+        text:
+
+delete_category:
+  fields:
+    shop:
+      required: true
+      example: "DINO"
+      selector:
+        text:
+    category:
+      required: true
+      example: "Napoje"
+      selector:
+        text:
+    confirm:
+      required: false
+      default: false
+      selector:
+        boolean:
+    entry:
+      required: false
+      selector:
+        text:
+
+delete_product:
+  fields:
+    shop:
+      required: true
+      example: "DINO"
+      selector:
+        text:
+    category:
+      required: true
+      example: "Napoje"
+      selector:
+        text:
+    product:
+      required: true
+      example: "Woda 1,5L"
+      selector:
+        text:
+    confirm:
+      required: false
+      default: false
+      selector:
+        boolean:
+    entry:
+      required: false
+      selector:
+        text:
+
+toggle_product:
+  fields:
+    shop:
+      required: true
+      example: "DINO"
+      selector:
+        text:
+    category:
+      required: true
+      example: "Napoje"
+      selector:
+        text:
+    product:
+      required: true
+      example: "Woda 1,5L"
+      selector:
+        text:
+    value:
+      required: false
+      selector:
+        boolean:
+    entry:
+      required: false
+      selector:
+        text:
+
+mark_all_bought:
+  fields:
+    shop:
+      required: false
+      example: "DINO"
+      selector:
+        text:
+    category:
+      required: false
+      selector:
+        text:
+    entry:
+      required: false
+      selector:
+        text:
+
+reset_all:
+  fields:
+    shop:
+      required: false
+      example: "DINO"
+      selector:
+        text:
+    category:
+      required: false
+      selector:
+        text:
+    entry:
+      required: false
+      selector:
+        text:
+
+reorder:
+  fields:
+    shop:
+      required: true
+      example: "DINO"
+      selector:
+        text:
+    category:
+      required: true
+      example: "Napoje"
+      selector:
+        text:
+    order:
+      required: true
+      example: ["Woda 1,5L", "Sok", "Cola"]
+      selector:
+        text:
+          multiple: true
+    entry:
+      required: false
+      selector:
+        text:
+
+refresh:
+  fields:
+    entry:
+      required: false
+      selector:
+        text:
+
+import_data:
+  fields:
+    data:
+      required: true
+      selector:
+        text:
+          multiline: true
+    entry:
+      required: false
+      selector:
+        text:
+
+export_data:
+  fields:
+    entry:
+      required: false
+      selector:
+        text:

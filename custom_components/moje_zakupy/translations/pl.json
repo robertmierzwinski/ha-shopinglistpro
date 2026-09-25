@@ -1,0 +1,32 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "ShopingListPro",
+        "description": "Lista zakupów przechowywana lokalnie w Home Assistant. Żaden zewnętrzny backend nie jest potrzebny.",
+        "data": {
+          "name": "Nazwa",
+          "initial": "Istniejąca lista (opcjonalnie)"
+        },
+        "data_description": {
+          "initial": "Wklej zawartość starego pliku data.json, aby importować listę podczas instalacji. Pozostaw puste, aby zacząć z pustą listą."
+        }
+      }
+    },
+    "error": {
+      "invalid_json": "Nie udało się odczytać wklejonych danych — sprawdź, czy to poprawny plik data.json."
+    },
+    "abort": {
+      "unique": "Ta lista zakupów jest już skonfigurowana."
+    },
+    "create_entry": "{name}"
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "ShopingListPro — opcje"
+      }
+    },
+    "create_entry": "Zapisano"
+  }
+}

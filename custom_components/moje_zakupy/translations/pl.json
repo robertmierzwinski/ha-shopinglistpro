@@ -19,7 +19,9 @@
     "abort": {
       "unique": "Ta lista zakupów jest już skonfigurowana."
     },
-    "create_entry": "{name}"
+    "create_entry": {
+      "default": "{name}"
+    }
   },
   "options": {
     "step": {
@@ -27,6 +29,8 @@
         "title": "ShopingListPro — opcje"
       }
     },
-    "create_entry": "Zapisano"
+    "create_entry": {
+      "default": "Zapisano"
+    }
   }
 }

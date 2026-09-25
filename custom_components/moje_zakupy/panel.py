@@ -12,7 +12,7 @@ from homeassistant.core import HomeAssistant
 from .const import DOMAIN, PANEL_MODULE, PANEL_PATH, PANEL_WEBCOMPONENT
 
 _LOGGER = logging.getLogger(__name__)
-CARD_VERSION = "1.0.6"
+CARD_VERSION = "1.0.7"
 
 
 async def _async_register_card(hass: HomeAssistant) -> None:

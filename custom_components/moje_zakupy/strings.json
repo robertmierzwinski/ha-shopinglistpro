@@ -19,7 +19,9 @@
     "abort": {
       "unique": "This shopping list is already configured."
     },
-    "create_entry": "{name}"
+    "create_entry": {
+      "default": "{name}"
+    }
   },
   "options": {
     "step": {
@@ -27,6 +29,8 @@
         "title": "ShopingListPro options"
       }
     },
-    "create_entry": "Options saved"
+    "create_entry": {
+      "default": "Options saved"
+    }
   }
 }

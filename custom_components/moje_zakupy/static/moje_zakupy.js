@@ -107,6 +107,11 @@ const MZ_CSS = `
   gap:.6rem 1.25rem; flex-wrap:wrap;
 }
 .mz-brand { display:flex; align-items:center; gap:.55rem; }
+.mz-menu-btn {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:40px; height:40px; flex:none; border-radius:50%;
+}
+.mz-menu-btn:hover { background:var(--bg-soft); }
 .mz-brand-icon { font-size:1.5em; line-height:1; }
 .mz-app-title { font-size:1.2em; font-weight:800; letter-spacing:-.02em; }
 
@@ -444,6 +449,7 @@ const MZ_ICONS = {
     '<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>',
   x: '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>',
   chevron: '<polyline points="9 18 15 12 9 6"/>',
+  menu: '<line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>',
   search:
     '<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>',
 };
@@ -1081,6 +1087,18 @@ class MojeZakupyPanel extends HTMLElement {
     const header = mzEl("header", "mz-header");
     const inner = mzEl("div", "mz-header-inner");
     const brand = mzEl("div", "mz-brand");
+    const menuBtn = mzEl("button", "mz-menu-btn");
+    menuBtn.type = "button";
+    menuBtn.setAttribute("aria-label", "Otwórz menu Home Assistant");
+    menuBtn.title = "Menu Home Assistant";
+    menuBtn.appendChild(mzIcon("menu", 24));
+    menuBtn.addEventListener("click", () => {
+      this.dispatchEvent(new CustomEvent("hass-toggle-menu", {
+        bubbles: true,
+        composed: true,
+      }));
+    });
+    brand.appendChild(menuBtn);
     brand.appendChild(mzEl("span", "mz-brand-icon", "🛒"));
     brand.appendChild(mzEl("h1", "mz-app-title", "ShopingListPro"));
     inner.appendChild(brand);
@@ -1293,7 +1311,7 @@ class MojeZakupyPanel extends HTMLElement {
     const themeSel = document.createElement("select");
     const themes = [
       ["auto", "Automatyczny"],
-      ["light", "Światły"],
+      ["light", "Jasny"],
       ["dark", "Ciemny"],
     ];
     for (const [v, l] of themes) {

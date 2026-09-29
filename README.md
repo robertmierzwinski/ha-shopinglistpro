@@ -9,7 +9,7 @@
 ShopingListPro is a standalone shopping-list app **inside Home Assistant** — no external backend, no PHP, no files on a server.
 Your list lives in HA's local storage, gets you a full web app, a dashboard card, entities and services.
 
-- **Full web app** at `http://<your-ha>/moje-zakupy` (registered automatically — looks like the classic 3-tab shopping list: *Zakupy / Koszyk / Ustawienia*)
+- **Full web app** at `http://<your-ha>/moje-zakupy` (registered automatically — looks like the classic 3-tab shopping list: *Zakupy / Koszyk / Ustawienia*; the header menu button opens Home Assistant navigation on mobile)
 - **Dashboard card** `custom:moje-zakupy-card` with search, progress bar and full management
 - **Entities**: a `select` per product (Do kupienia / Kupione), progress sensors, action buttons per shop
 - **13 services** for automation (toggle, mark all, reset, import/export, …)
@@ -83,6 +83,10 @@ W HACS pobierz najnowszą wersję, uruchom ponownie Home Assistant i odśwież s
 
 > W polu *Istniejąca lista* może być wiele list — po prostu wklej całość `data.json` (sklepy → kategorie → produkty).
 
+### Nawigacja w aplikacji mobilnej
+
+W nagłówku panelu ShopingListPro dotknij przycisku ☰, aby otworzyć boczne menu Home Assistant i przejść do innych ekranów aplikacji.
+
 ### Karta w dashboardzie
 
 1. W dashboardzie: **Edytuj dashboard** → **+ Dodaj kartę** → **ShopingListPro Card**. Integracja rejestruje zasób automatycznie w trybie `resource_mode: storage`. Po aktualizacji uruchom HA ponownie i odśwież stronę przeglądarki. W trybie `resource_mode: yaml` dodaj do `lovelace.resources` moduł o adresie `/moje_zakupy/moje_zakupy.js`.
@@ -103,7 +107,7 @@ max_height: 640
 
 - **Zakupy** — wyłącznie produkty *do kupienia*; kliknięcie produktu/kolorowej etykiety oznacza go jako kupiony (stan zapada się w HA).
 - **Koszyk** — pełne zarządzanie: dodawanie/usuwanie sklepów, kategorii i produktów, etykiety *Kupione/Do kupienia*, przesuwanie produktów (drag&drop), „Oznacz wszystko", „Resetuj", pasek postępu.
-- **Ustawienia** — wielkość czcionki, motyw (auto/światły/ciemny), **Eksportuj** do `data.json`, **Importuj** z pliku, **Wyczyść wszystkie dane**.
+- **Ustawienia** — wielkość czcionki, motyw (auto/jasny/ciemny), **Eksportuj** do `data.json`, **Importuj** z pliku, **Wyczyść wszystkie dane**.
 
 ### Serwisy (`moje_zakupy.*`)
 
@@ -153,6 +157,7 @@ action:
 
 ## Changelog / Licencja
 
+- **1.0.8** — dodano przycisk menu Home Assistant w panelu, ułatwiający powrót do nawigacji w aplikacji mobilnej; zmieniono etykietę motywu „Światły” na „Jasny”.
 - **1.0.7** — poprawiono błąd `this._config.shops is undefined` przy pierwszym otwarciu edytora karty; odświeżono wersję zasobu Lovelace.
 - **1.0.6** — poprawione tworzenie sensorów i aktualizacja zasobu karty; błędy rejestracji karty nie blokują uruchomienia listy.
 - **1.0.5** — obsługa wielu list o tej samej nazwie: panel i karta przekazują identyfikator wpisu przy każdej operacji; panel umożliwia wybór listy.
